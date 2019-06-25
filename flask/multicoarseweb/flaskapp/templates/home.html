@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>MultiGrossier</title>
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<h1>MultiGrossier</h1>
-	<p>Choisissez  votre future marque</p>
+  <title>MultiCoarse - Search</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 <body>
-	<div class="recherche_p">
-
-	<form action="/search" id="searchthis" method="get">
-	<input id="search" name="q" type="text" placeholder="Rechercher" />
-	<input id="search-btn" type="submit" value="Rechercher" />
-
-</form>
-
-</div>
+	<h1>MultiCoarse</h1>
+	<p>Please provide a possible name</p>
+	<div class="recherche">
+		<form action="/searchword" method="get">
+			<input name="word" type="text" />
+			<input type="submit" value="Search" />
+		</form>
+	</div>
 </body>
 </html>
