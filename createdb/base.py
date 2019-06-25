@@ -6,7 +6,7 @@ cursor = None
 def connect():
     global conn, cursor
     print('Connect to DB')
-    conn = sqlite3.connect('grossiers2.db')
+    conn = sqlite3.connect('coarsewords.db')
     cursor = conn.cursor()
 
 def create_table():
