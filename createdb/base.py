@@ -11,8 +11,8 @@ def connect():
 
 def create_table():
     print('Recreate table')
-    cursor.execute('DROP TABLE IF EXISTS motsgrossiers;')
-    cursor.execute('CREATE TABLE IF NOT EXISTS motsgrossiers (mot TEXT, catégories TEXT, phonétique TEXT, définition TEXT, étymologie TEXT, langues TEXT )')
+    cursor.execute('DROP TABLE IF EXISTS coarseword;')
+    cursor.execute('CREATE TABLE IF NOT EXISTS coarseword (mot TEXT, catégories TEXT, phonétique TEXT, définition TEXT, étymologie TEXT, langues TEXT )')
 
 def sql_escape(s):
     return '"'+s.replace('"', '""')+'"'
@@ -25,7 +25,7 @@ def insert_grossier(mot = '', categorie = '', phonetique = '', definition = '', 
     definition = sql_escape(definition)
     etymologie = sql_escape(etymologie)
     langue = sql_escape(langue)
-    cursor.execute('INSERT INTO motsgrossiers(mot, catégories, phonétique, définition, étymologie, langues) VALUES ('+mot+','+categorie+','+phonetique+','+definition+','+etymologie+','+langue+')')
+    cursor.execute('INSERT INTO coarseword(mot, catégories, phonétique, définition, étymologie, langues) VALUES ('+mot+','+categorie+','+phonetique+','+definition+','+etymologie+','+langue+')')
     conn.commit()
 
 connect()

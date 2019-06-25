@@ -24,7 +24,7 @@ class Content(db.Model):
 ##    def data_entry():
 ##	# J'ai retiré rowid qui est généré tout seul
 ##    print('Insert data')
-##    cursor.execute('INSERT INTO motsgrossiers(mot, phonetique, definition, etymologie, langues) VALUES ("putain", "bla", "mot grossier", "ancien", "fr")')
+##    cursor.execute('INSERT INTO coarsewords.db(mot, phonetique, definition, etymologie, langues) VALUES ("putain", "bla", "mot grossier", "ancien", "fr")')
         
 
 db.create_all()

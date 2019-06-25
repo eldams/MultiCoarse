@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import bs4
 import epitran
 from urllib.request import urlopen as uReq
@@ -65,7 +67,11 @@ for url in my_url:
                     for ipa in ipa_match:
                         new_list.append(ipa)
                     print(new_list)
-                script = epi.transliterate(text)
+                    script = ''
+                    try:
+                        script = epi.transliterate(text)
+                    except KeyError:
+                        continue
                 pronunciations.append(script.strip())
 
                 base.insert_grossier(text, '|'.join(categorie), '|'.join(pronunciations), '|'.join(definitions), etymology, 'en')
