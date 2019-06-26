@@ -8,8 +8,14 @@
 	<h1>MultiCoarse</h1>
 	<p>Please provide a possible name</p>
 	<div class="recherche">
-		<form action="/searchword" method="get">
-			<input name="word" type="text" />
+		<form method="GET" action="/searchword">
+			<input type="text" name="word" />
+			<select name="lang">
+				<option value="fr">French</option>
+				<option value="en">English</option>
+				<option value="sp">Spanish</option>
+				<option value="it">Italian</option>
+			</select>
 			<input type="submit" value="Search" />
 		</form>
 	</div>

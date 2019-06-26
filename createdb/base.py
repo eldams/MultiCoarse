@@ -11,23 +11,23 @@ def connect():
 
 def create_table():
     print('Recreate table')
-    cursor.execute('DROP TABLE IF EXISTS coarseword;')
-    cursor.execute('CREATE TABLE IF NOT EXISTS coarseword (mot TEXT, catégories TEXT, phonétique TEXT, définition TEXT, étymologie TEXT, langues TEXT )')
+    cursor.execute('DROP TABLE IF EXISTS coarseword')
+    cursor.execute('CREATE TABLE IF NOT EXISTS coarseword (word TEXT, categories TEXT, phonetics TEXT, definition TEXT, etymology TEXT, langs TEXT)')
 
 def sql_escape(s):
     return '"'+s.replace('"', '""')+'"'
 
-def insert_grossier(mot = '', categorie = '', phonetique = '', definition = '', etymologie = '', langue = ''):
-    print('Insert grossier')
-    mot = sql_escape(mot)
-    categorie = sql_escape(categorie)
-    phonetique = sql_escape(phonetique)
+def insert_coarseword(word = '', categories = '', phonetic = '', definition = '', etymology = '', lang = ''):
+    print('=> Insert coarse word:'+word+','+categories+','+phonetic)
+    word = sql_escape(word)
+    categories = sql_escape(categories)
+    phonetic = sql_escape(phonetic)
     definition = sql_escape(definition)
-    etymologie = sql_escape(etymologie)
-    langue = sql_escape(langue)
-    cursor.execute('INSERT INTO coarseword(mot, catégories, phonétique, définition, étymologie, langues) VALUES ('+mot+','+categorie+','+phonetique+','+definition+','+etymologie+','+langue+')')
+    etymology = sql_escape(etymology)
+    lang = sql_escape(lang)
+    cursor.execute('INSERT INTO coarseword(word, categories, phonetics, definition, etymology, langs) VALUES ('+word+','+categories+','+phonetic+','+definition+','+etymology+','+lang+')')
     conn.commit()
 
 connect()
 create_table()
-insert_grossier()
+# insert_grossier()
